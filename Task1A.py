@@ -15,8 +15,8 @@
 *****************************************************************************************
 '''
 
-# Team ID:          [ Team-ID ]
-# Author List:      [ Names of team members who worked on this file, separated by commas ]
+# Team ID:          3213
+# Author List:      Aditri Khanna, Kritika Raj, Abya Rao, Anamika Kumari
 # Filename:         Task1A.py
 # Functions:        find_equilibrium_points, find_A_B_matrices,
 #                   find_eigen_values, compute_lqr_gain
