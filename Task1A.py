@@ -209,9 +209,12 @@ def compute_lqr_gain(A_matrices, B_matrices, stability):
     R = np.array([1])    # Control weighting matrix
 
     ###### WRITE YOUR CODE HERE ################
-    # HINT: control.lqr() takes plain numpy arrays and returns three
-    # things, the gain first, e.g.
-    #     K, _, _ = control.lqr(A, B, Q, R)
+    unstable_index = stability.index('Unstable')
+
+    A = np.array(A_matrices[unstable_index]).astype(np.float64)
+    B = np.array(B_matrices[unstable_index]).astype(np.float64)
+
+    K, _, _ = control.lqr(A, B, Q, R)
 
     ############################################
 
