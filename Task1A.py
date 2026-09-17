@@ -108,6 +108,21 @@ def find_A_B_matrices(eq_points):
     #     sp.Matrix([x * y, x + k]).jacobian([k])      # w.r.t. the input
 
     ############################################
+    A_symbolic = f.jacobian(STATES)
+    B_symbolic = f.jacobian([u])
+
+    for point in eq_points:
+        values = {
+            STATES[0]: point[0],
+            STATES[1]: point[1],
+            u: 0
+        }
+
+        A = A_symbolic.subs(values)
+        B = B_symbolic.subs(values)
+
+        A_matrices.append(A)
+        B_matrices.append(B)
 
     return A_matrices, B_matrices
 
