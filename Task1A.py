@@ -42,11 +42,11 @@ import control
 # differentiable.
 
 # Define the symbolic variables
-theta, omega, u =
+theta, omega, u = sp.symbols('theta omega u')
 
 # Define the differential equations
-theta_dot =
-omega_dot =
+theta_dot = omega
+omega_dot = -10*sp.sin(theta) - omega + u
 
 # The order of the states. Keep it as angle first, then its rate.
 STATES = [theta, omega]
