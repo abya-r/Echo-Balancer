@@ -138,6 +138,22 @@ def find_eigen_values(A_matrices):
     # HINT: matrix.eigenvals() returns a dict of {eigenvalue: multiplicity},
     # e.g. sp.Matrix([[0, 1], [-4, -2]]).eigenvals()
 
+    for A in A_matrices:
+    
+        ev_dict = A.eigenvals()
+        eigen_values.append(ev_dict)
+    
+        is_stable = True
+        for val in ev_dict.keys():
+            if sp.re(val).evalf() >= 0:
+                is_stable = False
+                break
+    
+        if is_stable:
+            stability.append('Stable')
+        else:
+            stability.append('Unstable')
+
     ############################################
 
     return eigen_values, stability
