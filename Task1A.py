@@ -15,8 +15,8 @@
 *****************************************************************************************
 '''
 
-# Team ID:          [ Team-ID ]
-# Author List:      [ Names of team members who worked on this file, separated by commas ]
+# Team ID:          3213
+# Author List:      Aditri Khanna, Kritika Raj, Abya Rao, Anamika Kumari
 # Filename:         Task1A.py
 # Functions:        find_equilibrium_points, find_A_B_matrices,
 #                   find_eigen_values, compute_lqr_gain
@@ -137,6 +137,22 @@ def find_eigen_values(A_matrices):
     ###### WRITE YOUR CODE HERE ################
     # HINT: matrix.eigenvals() returns a dict of {eigenvalue: multiplicity},
     # e.g. sp.Matrix([[0, 1], [-4, -2]]).eigenvals()
+
+    for A in A_matrices:
+    
+        ev_dict = A.eigenvals()
+        eigen_values.append(ev_dict)
+    
+        is_stable = True
+        for val in ev_dict.keys():
+            if sp.re(val).evalf() >= 0:
+                is_stable = False
+                break
+    
+        if is_stable:
+            stability.append('Stable')
+        else:
+            stability.append('Unstable')
 
     ############################################
 
