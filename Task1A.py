@@ -68,6 +68,12 @@ def find_equilibrium_points():
     a list of unknowns. sin(theta) = 0 has infinitely many roots in theory;
     only two are physically distinct.
     '''
+    
+    ###### WRITE YOUR CODE HERE ################
+    # HINT: sp.solve() takes a list of expressions (each taken to equal
+    # zero) and a list of unknowns, e.g.
+    #     sp.solve([x + y - 2, x - y], [x, y])       # -> [(1, 1)]
+
     theta_eq = theta_dot.subs(u, 0)
     omega_eq = omega_dot.subs(u, 0)
 
@@ -76,10 +82,6 @@ def find_equilibrium_points():
         [theta, omega],
         dict=True
     )
-    ###### WRITE YOUR CODE HERE ################
-    # HINT: sp.solve() takes a list of expressions (each taken to equal
-    # zero) and a list of unknowns, e.g.
-    #     sp.solve([x + y - 2, x - y], [x, y])       # -> [(1, 1)]
 
     ############################################
 
