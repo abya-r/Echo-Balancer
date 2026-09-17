@@ -77,11 +77,7 @@ def find_equilibrium_points():
     theta_eq = theta_dot.subs(u, 0)
     omega_eq = omega_dot.subs(u, 0)
 
-    equi_points = sp.solve(
-        [theta_eq, omega_eq],
-        [theta, omega],
-        dict=True
-    )
+    equi_points = sp.solve([theta_eq, omega_eq], [theta, omega])
 
     ############################################
 
